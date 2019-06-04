@@ -17,6 +17,8 @@ const _kThumbShadowColor = Color(0x44000000);
 /// A padding used to calculate bar height(thumbRadius * 2 - kBarPadding).
 const _kBarPadding = 4;
 
+/// Base64 encoded image for alpha picker background
+const _kAlphaTexture = "iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==";
 
 /// A bar color picker
 class BarColorPicker extends StatefulWidget {
@@ -104,7 +106,9 @@ class _BarColorPickerState extends State<BarColorPicker> {
         ];
         break;
     }
-    percent = HSVColor.fromColor(widget.initialColor).hue / 360;
+    percent = HSVColor
+      .fromColor(widget.initialColor)
+      .hue / 360;
   }
 
   @override
